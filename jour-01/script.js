@@ -25,3 +25,6 @@ console.log(chercheid);
 
 const lab = articles.some((article)=> article.prix > 5000);
 console.log(lab);
+
+const tab = articles.every((article)=>article.stock>0);
+console.log(tab);
