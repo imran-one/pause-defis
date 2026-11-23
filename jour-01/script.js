@@ -15,3 +15,7 @@ const article = articles.filter((article)=>{
     return article.categorie === "bague";
 });
 console.log(article);
+const namearticle = articles.filter((article)=>{
+    return article.stock === 0;
+}).map((article)=>article.titre);
+console.log(namearticle);
