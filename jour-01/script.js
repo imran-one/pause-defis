@@ -19,3 +19,7 @@ const namearticle = articles.filter((article)=>{
     return article.stock === 0;
 }).map((article)=>article.titre);
 console.log(namearticle);
+
+const chercheid = articles.find((article)=> article.id === 7 );
+console.log(chercheid);
+
