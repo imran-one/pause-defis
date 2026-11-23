@@ -23,3 +23,5 @@ console.log(namearticle);
 const chercheid = articles.find((article)=> article.id === 7 );
 console.log(chercheid);
 
+const lab = articles.some((article)=> article.prix > 5000);
+console.log(lab);
