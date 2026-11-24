@@ -23,12 +23,12 @@ console.log(tribydate[0]);
 const valeurtotale = articles.reduce((totale,e)=> totale+(e.prix*e.stock) ,0);
 console.log(valeurtotale);
 
-const categories = articles.reduce((catigori,e)=>{
+const categories = articles.reduce((object,e)=>{
     const cat = e.categorie
-    if (catigori[cat]){
-        catigori[cat] = catigori[cat] +1;
-    }else catigori[cat] =1;
-    return catigori;
+    if (object[cat]){
+        object[cat] = object[cat] +1;
+    }else object[cat] =1;
+    return object;
 },{});
 console.log(categories);
 
