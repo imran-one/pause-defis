@@ -10,3 +10,14 @@ let articles = [
   { id: 9, titre: "Collier main de Fatma", categorie: "collier", prix: 980, stock: 7, date: "2026-08-05" },
   { id: 10, titre: "Créoles argent", categorie: "boucles", prix: 720, stock: 9, date: "2026-10-18" }
 ];
+
+const tribyprix = [...articles].sort((a,b)=>a.prix-b.prix);
+console.log(tribyprix[0]);
+
+const tribytitre = [...articles].sort((a,b)=>a.titre.localeCompare(b.titre));
+console.log(tribytitre[0]);
+
+const tribydate = [...articles].sort((a,b)=>b.date.localeCompare(a.date));
+console.log(tribydate[0]);
+
+console.log(articles);
