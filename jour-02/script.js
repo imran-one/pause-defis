@@ -22,4 +22,5 @@ console.log(tribydate[0]);
 
 const valeurtotale = articles.reduce((totale,e)=> totale+(e.prix*e.stock) ,0);
 console.log(valeurtotale);
+
 console.log(articles);
