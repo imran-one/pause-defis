@@ -30,6 +30,6 @@ const categories = articles.reduce((catigori,e)=>{
     }else catigori[cat] =1;
     return catigori;
 },{});
-
 console.log(categories);
-console.log(articles);
+
+console.log(articles[0].titre);
