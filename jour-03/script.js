@@ -10,3 +10,36 @@ let articles = [
   { id: 9, titre: "Collier main de Fatma", categorie: "collier", prix: 980, stock: 7, date: "2026-08-05" },
   { id: 10, titre: "Créoles argent", categorie: "boucles", prix: 720, stock: 9, date: "2026-10-18" }
 ];
+
+function appliquerFiltres(items, options) {
+  const cherche = options.q ? options.q.trim().toLowerCase() : "";
+  const articlechercher = items.filter((article)=>article.titre.toLowerCase().includes(cherche));
+  let articlesFiltres;
+  if (options.categorie && options.categorie !== "toutes"){
+   articlesFiltres = articlechercher.filter((article)=>article.categorie === options.categorie);
+  }else articlesFiltres = articlechercher;
+  switch(options.tri){
+    case "titre":
+    articlesFiltres.sort((a,b)=>a.titre.localeCompare(b.titre));
+    break;
+    case "prix-asc":
+      articlesFiltres.sort((a,b)=>a.prix-b.prix);
+      break;
+    case "prix-desc":
+      articlesFiltres.sort((a,b)=> b.prix - a.prix);
+      break;
+  }
+  return articlesFiltres;
+}
+console.log(
+  appliquerFiltres(articles, { q: "", categorie: "toutes", tri: "prix-asc" })
+);
+console.log(
+  appliquerFiltres(articles, { q: "COLLIER", categorie: "toutes", tri: "prix-desc" })
+);
+console.log(
+  appliquerFiltres(articles, { q: "", categorie: "bague", tri: "titre" })
+);
+console.log(
+  appliquerFiltres(articles, { q: "argent", categorie: "bracelet", tri: "prix-asc" })
+);
