@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>jour-05</title>
-        <script type="module" src="script.js"></script>
-    </head>
-    <body>
-        <h1>jour-05</h1>
-    </body>
+
+<head>
+    <title>jour-05</title>
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+    <h1>jour-05</h1>
+    <input id="recherche" type="text" placeholder="recherche...">
+    <select id="categorie">
+        <option value="toutes">toutes</option>
+        <option value="bague">bague</option>
+        <option value="collier">collier</option>
+        <option value="bracelet">bracelet</option>
+        <option value="boucles">boucles</option>
+    </select>
+    <select id="tri">
+        <option value="titre">titre</option>
+        <option value="prix-asc">prix-asc</option>
+        <option value="prix-desc">prix-desc</option>
+    </select>
+    <button id="btn">Réinitialiser</button>
+    <p id="compteur"></p>
+    <p id="valeur-stock"></p>
+    <ul id="liste"></ul>
+</body>
+
 </html>
