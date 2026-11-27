@@ -11,35 +11,46 @@ let articles = [
   { id: 10, titre: "Créoles argent", categorie: "boucles", prix: 720, stock: 9, date: "2026-10-18" }
 ];
 
-import { appliquerFiltres } from "../jour-03/script.js";
+//import { appliquerFiltres } from "../jour-03/script.js";
 const list = document.getElementById("liste");
 
-function render(liste){
-    list.textContent = '';
-    for (const e of liste){
-        const article = document.createElement("article");
-        const title = document.createElement("h3");
-        const categorie = document.createElement("p");
-        const prix = document.createElement("p");
-        const stock = document.createElement("p");
+export function render(liste) {
+  list.textContent = "";
+  if (liste.length == 0) {
+    list.textContent = "Aucun article";
+    document.getElementById("compteur").textContent = "Articles : 0";
+    document.getElementById("valeur-stock").textContent = "la valeur totale: 0";
+    return;
+  }
+  for (const e of liste) {
+    const article = document.createElement("article");
+    const title = document.createElement("h3");
+    const categorie = document.createElement("p");
+    const prix = document.createElement("p");
+    const stock = document.createElement("p");
 
-        title.textContent = e.titre;
-        categorie.textContent = `Categorie: ${e.categorie}`;
-        prix.textContent = `Prix: ${e.prix}`;
-        stock.textContent = e.stock <= 0 ?`Rupture`:`Stock: ${e.stock}`;
+    title.textContent = e.titre;
+    categorie.textContent = `Categorie: ${e.categorie}`;
+    prix.textContent = `Prix: ${e.prix}`;
+    stock.textContent = e.stock <= 0 ? `Rupture` : `Stock: ${e.stock}`;
 
-        article.append(title);
-        article.append(categorie);
-        article.append(prix);
-        article.append(stock);
+    article.append(title);
+    article.append(categorie);
+    article.append(prix);
+    article.append(stock);
 
-        list.append(article);
-    }
-    document.getElementById("compteur").textContent = `Articles : ${liste.length}`;
-    const valeurtotale = liste.reduce((totale,e)=>totale+e.prix*e.stock,0);
-    document.getElementById("valeur-stock").textContent = `la valeur totale: ${valeurtotale}`;
+    list.append(article);
+  }
+  document.getElementById("compteur").textContent =
+    `Articles : ${liste.length}`;
+  const valeurtotale = liste.reduce(
+    (totale, e) => totale + e.prix * e.stock,
+    0,
+  );
+  document.getElementById("valeur-stock").textContent =
+    `la valeur totale: ${valeurtotale}`;
 }
 
-render(articles);
+//render(articles);
 
 //render(appliquerFiltres(articles, { q: "", categorie: "bague", tri: "titre" }))
