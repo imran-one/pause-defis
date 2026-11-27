@@ -11,7 +11,7 @@ let articles = [
   { id: 10, titre: "Créoles argent", categorie: "boucles", prix: 720, stock: 9, date: "2026-10-18" }
 ];
 
-function appliquerFiltres(items, options) {
+export function appliquerFiltres(items, options) {
   const cherche = options.q ? options.q.trim().toLowerCase() : "";
   const articlechercher = items.filter((article)=>article.titre.toLowerCase().includes(cherche));
   let articlesFiltres;
