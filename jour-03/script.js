@@ -31,7 +31,7 @@ export function appliquerFiltres(items, options) {
   }
   return articlesFiltres;
 }
-console.log(
+/*console.log(
   appliquerFiltres(articles, { q: "", categorie: "toutes", tri: "prix-asc" })
 );
 console.log(
@@ -42,4 +42,4 @@ console.log(
 );
 console.log(
   appliquerFiltres(articles, { q: "argent", categorie: "bracelet", tri: "prix-asc" })
-);
+);*/
